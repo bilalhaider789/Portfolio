@@ -56,10 +56,6 @@ onMounted(() => {
   animation: rotate 2s;
   transform-origin: top left;
 }
-
-.bounce-top:hover {
-	animation: bounce-top 0.9s ease-in-out ;
-}
 .para {
   animation: rotate 8s linear infinite;
 }

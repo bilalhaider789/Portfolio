@@ -20,8 +20,8 @@ onMounted(() => {
       <p class="bg-blue-400 w-52 absolute ml-5 top-0 z-0 transition-all duration-500"> here buddy</p>
     </div> -->
     <section class="custom bg-red-100 min-h-[100vh] flex flex-col justify-center items-center">
-      <div class="relative w-64 flex justify-center">
-        <p>animation</p>
+      <div class="relative w-96 flex justify-center">
+        <p class="text-[100px] font-semibold spring-text">A</p>
         <div class="para absolute w-full flex justify-between">
           <p class=" rotate-reverse w-14 bg-red-500 h-14 flex items-center justify-center rounded-full"> Hello</p>
           <p class=" rotate-reverse  w-14 bg-red-500 h-14 flex items-center justify-center rounded-full"> World</p>
@@ -44,6 +44,27 @@ onMounted(() => {
 </template>
 
 <style scoped>
+
+@keyframes spring {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  75% {
+    transform: translateY(-5px);
+  }
+}
+
+.spring-text:hover {
+  transform: scaleX(1.25) scaleY(0.75);
+  transition: transform 0.5s;
+}
+
 
 .btn {
   color: green;

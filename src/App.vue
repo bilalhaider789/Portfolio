@@ -3,23 +3,39 @@ import { ref, onMounted } from 'vue';
 
 const cursor = ref();
 let timeout = ref();
+const cursorX = ref(-50);
+const cursorY = ref(-50);
 
 document.addEventListener("mouseout", () => {
-  cursor.value.style.display = "none";
+  hideCursor()
 });
 
-const mouseStopped = () => {
+const hideCursor = () => {
   cursor.value.style.display = "none";
+}
+
+const showCursor = () => {
+  cursor.value.style.display = "block";
 }
 
 const mouseMoveEffect = () => {
   document.addEventListener("mousemove", (e) => {
     let x = e.pageX;
     let y = e.pageY;
-    cursor.value.style.top = y + "px";
-    cursor.value.style.left = x + "px";
-    cursor.value.style.display = "block";
-    timeout.value = setTimeout(mouseStopped, 1500)
+
+    const dx = x - cursorX.value;
+    const dy = y - cursorY.value;
+    const speed = 0.1;
+
+    cursorX.value += dx * speed;
+    cursorY.value += dy * speed;
+
+    cursor.value.style.top = cursorY.value + "px";
+    cursor.value.style.left = cursorX.value + "px";
+
+    clearTimeout(timeout.value);
+    showCursor();
+    timeout.value = setTimeout(hideCursor, 1000);
   });
 }
 
@@ -34,13 +50,13 @@ onMounted(() => {
   <div>
     <div class="cursor"></div>
     <!-- <div v-if="state" class="btn px-4 w-fit border-2 border-red-500 rounded-xl m-10">
-            <button class=""> I am here</button>
-          </div>
-          <button @click="state=!state">click me</button>
-          <div class="relative">
-            <p class="bg-red-400 w-52 top-0 absolute hover:z-10  transition-all duration-500"> here buddy</p>
-            <p class="bg-blue-400 w-52 absolute ml-5 top-0 z-0 transition-all duration-500"> here buddy</p>
-          </div> -->
+              <button class=""> I am here</button>
+            </div>
+            <button @click="state=!state">click me</button>
+            <div class="relative">
+              <p class="bg-red-400 w-52 top-0 absolute hover:z-10  transition-all duration-500"> here buddy</p>
+              <p class="bg-blue-400 w-52 absolute ml-5 top-0 z-0 transition-all duration-500"> here buddy</p>
+            </div> -->
     <section class="custom bg-red-100 min-h-[100vh] flex flex-col justify-center items-center">
       <div class="relative w-96 flex justify-center bg-gray-300">
         <p class="text-[100px] font-semibold spring-text">A</p>

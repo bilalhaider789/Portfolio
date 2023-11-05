@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import CursorEffect from "./components/effects/CursorEffect.vue"
+
 </script>
 
 <template>

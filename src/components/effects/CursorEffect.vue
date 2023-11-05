@@ -47,9 +47,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
-    <div class="cursor"></div>
-  </div>
+  <div class="cursor"></div>
 </template>
 
 <style scoped>

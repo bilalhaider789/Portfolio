@@ -1,6 +1,26 @@
 <script setup lang="ts">
 import CursorEffect from "./components/effects/CursorEffect.vue"
 
+document.addEventListener("scroll", function() {
+    const textElements = document.querySelectorAll('.text-element');
+    textElements.forEach(el => {
+        if (isElementInViewport(el)) {
+            el.classList.add('visible');
+        } else {
+            el.classList.remove('visible');
+        }
+    });
+});
+function isElementInViewport(el:any) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
 </script>
 
 <template>
@@ -37,7 +57,7 @@ import CursorEffect from "./components/effects/CursorEffect.vue"
     </section>
     <section class="custom bg-red-200 min-h-[100vh] flex flex-col justify-center items-center">
       <h1>I am heading</h1>
-      <p class="max-w-3xl">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet asperiores minus vel nisi
+      <p class="max-w-3xl text-element">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet asperiores minus vel nisi
         iure qui adipisci velit, dolorum in? Quisquam quod nihil voluptatem. Eius nihil voluptas, ut commodi voluptatum
         consequuntur!</p>
     </section>
@@ -51,6 +71,25 @@ import CursorEffect from "./components/effects/CursorEffect.vue"
 </template>
 
 <style scoped>
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.text-element {
+    opacity: 0; /* Start with the text hidden */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for the fade-in effect */
+}
+
+.text-element.visible {
+    animation-name: fadeInText;
+    animation-duration: 3s; /* Duration of the fade-in effect */
+    animation-fill-mode: forwards; /* Keeps the text visible after the animation completes */
+}
 .spring-text {
   transition: transform 0.5s;
 }

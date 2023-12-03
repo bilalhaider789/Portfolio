@@ -35,7 +35,7 @@ const mouseMoveEffect = () => {
 
     clearTimeout(timeout.value);
     showCursor();
-    timeout.value = setTimeout(hideCursor, 1000);
+    timeout.value = setTimeout(hideCursor, 500);
   });
 }
 
@@ -53,7 +53,7 @@ onMounted(() => {
 <style scoped>
 .cursor {
   z-index: 9999;
-  position: fixed;
+  position: absolute;
   background: #2696e8;
   width: 20px;
   height: 20px;

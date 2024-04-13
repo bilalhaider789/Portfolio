@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@media (max-width: 640px) {
+    .responsive-h1 {
+      font-size: 2.5rem; 
+    }
+    .responsive-h2 {
+        font-size: 1.8rem; 
+    }
+    .responsive-h3 {
+        font-size: 1.3rem; 
+    }
+  }
+  
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .responsive-h1 {
+      font-size: 3.5rem; 
+    }
+    .responsive-h2 {
+        font-size: 2rem; 
+    }
+    .responsive-h3 {
+        font-size: 1.5rem; 
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    .responsive-h1 {
+      font-size: 5rem; 
+    }
+    .responsive-h2 {
+        font-size: 2.5rem; 
+    }
+    .responsive-h3 {
+        font-size: 1.7rem; 
+    }
+  }

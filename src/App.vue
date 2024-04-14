@@ -23,11 +23,11 @@
           class="shape-fill fill-quaternary"></path>
       </svg>
     </div>
-    <section class="bg-[#f8f8f8] min-h-[100vh] flex flex-col font-merienda px-4 lg:px-6">
+    <section class="bg-[#f8f8f8] min-h-[100vh] flex flex-col font-merienda px-4 lg:px-6" >
       <div class="w-full flex justify-center">
         <h1 class="responsive-h1 lg:text-[3.5rem]">Skills</h1>
       </div>
-      <h2 class="responsive-h3 mt-4 font-medium">FrontEnd</h2>
+      <h2 class="responsive-h3 mt-4 font-semibold">FrontEnd</h2>
       <div class="skills responsive-p1 grid grid-cols-3 lg:grid-cols-4 gap-4 mt-4 lg:mt-6">
         <div class="flex gap-2 items-center"><img class="h-10 w-10"
             src="./assets/imgs/skills/react.svg" /><span>React.js</span></div>
@@ -48,7 +48,7 @@
         <div class="flex gap-2 items-center"><img class="h-10 w-10"
             src="./assets/imgs/skills/css.svg" /><span>CSS</span></div>
       </div>
-      <h2 class="responsive-h3 mt-6 font-medium">BackEnd</h2>
+      <h2 class="responsive-h3 mt-6 font-semibold">BackEnd</h2>
       <div class="skills responsive-p1 grid grid-cols-3 lg:grid-cols-4 gap-4 mt-4 lg:mt-6">
         <div class="flex gap-2 items-center"><img class="h-10 w-10"
             src="./assets/imgs/skills/node.svg" /><span>Node</span></div>
@@ -67,13 +67,42 @@
         <div class="flex gap-2 items-center"><img class="h-10 w-10"
             src="./assets/imgs/skills/influxdb.svg" /><span>InfluxDB</span></div>
         <div class="flex gap-2 items-center"><img class="h-10 w-10" src="./assets/imgs/skills/api.svg" /><span>Rest
-            Api</span></div>
-        <div class="flex gap-2 items-center"><img class="h-10 w-10" src="./assets/imgs/skills/protobuf.svg" /><span>ProtoBuf</span></div>
-        <div class="flex gap-2 items-center"><img class="h-10 w-10" src="./assets/imgs/skills/grpc.svg" /><span>gRPC</span></div>
-        <div class="flex gap-2 items-center"><img class="h-10 w-10" src="./assets/imgs/skills/flask.svg" /><span>Flask</span></div>
-        <div class="flex gap-2 items-center"><img class="h-8 w-10" src="./assets/imgs/skills/mqtt.svg" /><span>Mqtt</span></div>
+            </span></div>
+        <div class="flex gap-2 items-center"><img class="h-10 w-10"
+            src="./assets/imgs/skills/protobuf.svg" /><span>ProtoBuf</span></div>
+        <div class="flex gap-2 items-center"><img class="h-10 w-10"
+            src="./assets/imgs/skills/grpc.svg" /><span>gRPC</span></div>
+        <div class="flex gap-2 items-center"><img class="h-10 w-10"
+            src="./assets/imgs/skills/flask.svg" /><span>Flask</span></div>
+        <div class="flex gap-2 items-center"><img class="h-6 w-10"
+            src="./assets/imgs/skills/mqtt.svg" /><span>Mqtt</span></div>
 
       </div>
+
+      <h2 class="responsive-h3 mt-6 font-semibold">Other</h2>
+      <div class="skills responsive-p1 grid grid-cols-3 lg:grid-cols-4 gap-4 mt-4 lg:mt-6">
+        <div class="flex gap-2 items-center"><img class="h-10 w-10"
+            src="./assets/imgs/skills/docker.svg" /><span>Docker</span></div>
+        <div class="flex gap-2 items-center"><img class="h-10 w-10"
+            src="./assets/imgs/skills/ci-cd.svg" /><span>CI-CD</span></div>
+        <div class="flex gap-2 items-center"><img class="h-10 w-10"
+            src="./assets/imgs/skills/git.svg" /><span>Git</span></div>
+        <div class="flex gap-2 items-center "><img class="h-10 w-10"
+            src="./assets/imgs/skills/jira.svg" /><span>Jira</span></div>
+        <div class="flex gap-2 items-center"><img class="h-10 w-10"
+            src="./assets/imgs/skills/azure.svg" /><span>Azure</span></div>
+        <div class="flex gap-2 items-center"><img class="h-8 w-10" src="./assets/imgs/skills/aws.svg" /><span>AWS</span>
+        </div>
+        <div class="flex gap-2 items-center"><img class="h-10 w-10"
+            src="./assets/imgs/skills/go.svg" /><span>GoLang</span></div>
+        <div class="flex gap-2 items-center"><img class="h-10 w-10"
+            src="./assets/imgs/skills/js.svg" /><span>JavaScript</span></div>
+        <div class="flex gap-2 items-center"><img class="h-10 w-10"
+            src="./assets/imgs/skills/typescript.svg" /><span>TypeScript</span></div>
+        <div class="flex gap-2 items-center "><img class="h-10 w-10"
+            src="./assets/imgs/skills/python.svg" /><span>Python</span></div>
+      </div>
+
     </section>
 
   </div>
@@ -90,9 +119,12 @@ document.addEventListener("scroll", function () {
   const textElements = document.querySelectorAll('.scroll-effect');
   textElements.forEach(el => {
     if (isElementInViewport(el)) {
+      el.classList.remove('invisible');
       el.classList.add('visible');
     } else {
       el.classList.remove('visible');
+      el.classList.add('invisible');
+
     }
   });
 });
@@ -131,14 +163,14 @@ function isElementInViewport(el: any) {
   }
 }
 
-.text-element {
+.scroll-effect {
   opacity: 0;
   /* Start with the text hidden */
   transition: opacity 0.3s ease-in-out;
   /* Smooth transition for the fade-in effect */
 }
 
-.text-element.visible {
+.scroll-effect.visible {
   animation-name: fadeInText;
   animation-duration: 3s;
   /* Duration of the fade-in effect */

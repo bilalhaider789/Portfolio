@@ -13,6 +13,9 @@
     .responsive-h3 {
         font-size: 1.3rem; 
     }
+    .responsive-p1 {
+      font-size: 1rem; 
+    }
   }
   
   @media (min-width: 641px) and (max-width: 1024px) {
@@ -25,6 +28,9 @@
     .responsive-h3 {
         font-size: 1.5rem; 
     }
+    .responsive-p1 {
+      font-size: 1.1rem; 
+    }
   }
   
   @media (min-width: 1025px) {
@@ -36,5 +42,8 @@
     }
     .responsive-h3 {
         font-size: 1.7rem; 
+    }
+    .responsive-p1 {
+      font-size: 1.2rem; 
     }
   }

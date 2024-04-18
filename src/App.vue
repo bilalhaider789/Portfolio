@@ -16,8 +16,10 @@
         </div>
       </section>
       <Skills></Skills>
+      <Experience></Experience>
+      <Projects></Projects>
     </div>
-    
+
 
   </div>
 </template>
@@ -28,6 +30,10 @@ import RotatingCircle from "./components/RotatingCircle.vue";
 import SpringHeading from "./components/SpringHeading.vue";
 import NavBar from "./components/NavBar.vue";
 import Skills from "./components/Skills.vue";
+import Experience from "./components/Experience.vue";
+import Projects from "./components/Projects.vue";
+
+
 
 
 

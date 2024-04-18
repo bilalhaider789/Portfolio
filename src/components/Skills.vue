@@ -6,7 +6,7 @@
           class="shape-fill fill-quaternary"></path>
       </svg>
     </div>
-    <section class="bg-[#f8f8f8] min-h-[100vh] flex flex-col font-merienda px-4 lg:px-6" >
+    <section class="bg-[#f8f8f8] min-h-fit flex flex-col font-merienda px-4 lg:px-6" >
       <div class="w-full flex justify-center">
         <h1 class="responsive-h1 lg:text-[3.5rem]">Skills</h1>
       </div>
@@ -31,6 +31,8 @@
         <div class="flex gap-2 items-center"><img class="h-10 w-10"
             src="../assets/imgs/skills/css.svg" /><span>CSS</span></div>
       </div>
+      <hr class="mt-4 border-2"/>
+
       <h2 class="responsive-h3 mt-6 font-semibold">BackEnd</h2>
       <div class="skills responsive-p1 grid grid-cols-3 lg:grid-cols-4 gap-4 mt-4 lg:mt-6">
         <div class="flex gap-2 items-center"><img class="h-10 w-10"
@@ -59,8 +61,9 @@
             src="../assets/imgs/skills/flask.svg" /><span>Flask</span></div>
         <div class="flex gap-2 items-center"><img class="h-6 w-10"
             src="../assets/imgs/skills/mqtt.svg" /><span>Mqtt</span></div>
-
       </div>
+      <hr class="mt-4 border-2"/>
+
 
       <h2 class="responsive-h3 mt-6 font-semibold">Other</h2>
       <div class="skills responsive-p1 grid grid-cols-3 lg:grid-cols-4 gap-4 mt-4 lg:mt-6">
@@ -88,3 +91,18 @@
 
     </section>
 </template>
+
+<style scoped>
+
+
+.skills > div > img {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .skills > div > img {
+    display: block;
+  }
+}
+
+</style>

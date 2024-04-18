@@ -14,7 +14,7 @@ export default {
         Otomanopee: ["oo", "sans-serif"],
         luck: ["Luckiest Guy", "cursive"],
         ultra: ["Ultra", "serif"],
-        merienda: ["Merienda", "cursive"],
+        merienda: ["cursive", "cursive"],
         micro: ["Micro 5", "cursive"],
       },
     },

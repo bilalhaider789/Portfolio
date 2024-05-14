@@ -76,7 +76,6 @@ span {
 .rotate-reverse {
     position: absolute;
     width: 3rem;
-    /* Adjust width and height as needed */
     height: 3rem;
     display: flex;
     align-items: center;
@@ -86,8 +85,6 @@ span {
     border-color: #012957;
     border-width: 2px;
 }
-
-/* Distribute the text elements evenly around the circle */
 .rotate-reverse:nth-child(1) {
     transform: rotate(0deg) translateX(12rem);
 }

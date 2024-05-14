@@ -14,7 +14,7 @@
             <h2 class="responsive-h3 mt-4 font-bold">Full Stack Polyglot Engineer</h2>
             <p class="responsive-p1 mt-1"><a href="https://cowlardesignstudio.com/" target="_blank"
                     rel="noopener noreferrer" class="underline mr-2 font-semibold cursor-pointer">Cowlar Design
-                    Studio</a> ⦿ June,
+                    Studio(YC 2017)</a> ⦿ June,
                 2023 - Present</p>
             <div class=" mt-2 ml-5 responsive-p1">
 
